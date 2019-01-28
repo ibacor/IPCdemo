@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/messenger"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="messenger"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/aidl"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="aidl"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/messenger"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/provider"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="provider"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/aidl"
+        android:layout_marginTop="10dp"/>
+
+    <Button
+        android:id="@+id/binderpool"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="binderpool"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/provider"
+        android:layout_marginTop="10dp"/>
+
+</android.support.constraint.ConstraintLayout>

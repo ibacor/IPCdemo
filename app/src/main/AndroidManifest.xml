@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.bacor.ipcdemo">
+
+    <permission android:name="com.example.bacor.ipcdemo.permission.BOOK_MANAGER_SERVICE"
+        android:protectionLevel="normal"/>
+
+    <uses-permission android:name="com.example.bacor.ipcdemo.permission.BOOK_MANAGER_SERVICE"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".messenger.MessengerActivity" />
+        <service android:name=".messenger.MessengerService"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.example.bacor.MessengerService.launch"/>
+            </intent-filter>
+        </service>
+
+        <activity android:name=".aidl.BookManagerActivity" />
+        <service android:name=".aidl.BookManagerService" android:process=":remote"/>
+
+        <activity android:name=".provider.ProviderActivity"/>
+        <provider
+            android:authorities="com.example.bacor.ipcdemo.book.provider"
+            android:name=".provider.BookProvider"
+            android:process=":provider"
+            android:permission="com.example.bacor.PROVIDER"/>
+
+        <activity android:name=".binderPool.BinderPoolActivity" />
+        <service android:name=".binderPool.BinderPoolService" android:process=":remote"/>
+    </application>
+
+</manifest>
